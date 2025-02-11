@@ -1,6 +1,12 @@
 <script></script>
 <template>
-  <h1>Hello World</h1>
-  <h2>updated version</h2>
+  <h1>Food List</h1>
+  <food-mango/>
+  <food-mango/>
+  <food-mango/>
+  <food-mango/>
 </template>
-<style></style>
+<style>
+  
+  
+</style>
