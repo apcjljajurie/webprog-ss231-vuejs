@@ -1,15 +1,15 @@
 
 <template>
-   <div>
+   <div class="comment-form">
       <h2>Leave a Comment</h2>
       <form @submit.prevent="submitComment">
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" id="name" v-model="name" required class="form-control">
+          <input type="text" id="name" placeholder="Enter name" v-model="name" required class="form-control">
         </div>
         <div class="form-group">
           <label for="comment">Comment:</label>
-          <textarea id="comment" v-model="comment" required class="form-control"></textarea>
+          <textarea id="comment"  placeholder="Enter comment" v-model="comment" required class="form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <div v-if="submissionStatus" class="mt-2">
@@ -51,19 +51,58 @@ import { ref } from 'vue';
 </script>
 <style>
  /* Basic styling - Customize as needed */
- .form-group {
-    margin-bottom: 1rem;
+ .comment-form {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 500px;  /* 90% width on desktop */
+  border-radius: 7px;
+  padding: 10px 20px;
+  border: 2px dashed #b33a3a;
+  background-color: rgb(39, 179, 226);
+}
+
+/* Adjust styles for smaller screens (mobile) */
+@media (max-width: 600px) {
+  .comment-form {
+    width: 100%; /* 100% width on mobile */
+    padding: 0;
+  }
+  h2{
+    margin: 0 auto;
+    padding: 30px 0 0 10px;
+  }
+  .form-group{
+    width: 95%;
+    padding: 10px;
   }
   
+  .btn {
+    margin: 0 0 10px 10px;
+    padding: 0;
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 4px 4px;
+  margin-bottom: 1rem;
+  background-color: rgb(39, 179, 226);
+  }
+  textarea{
+    resize: none;
+  }
   label {
+    font-weight: 700;
     display: block;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem;
+    margin-bottom: .6rem;
   }
-  
+
   .form-control {
     width: auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #b33a3a;
     border-radius: 4px;
   }
   
