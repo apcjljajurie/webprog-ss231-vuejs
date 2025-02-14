@@ -6,6 +6,7 @@
   <food-mango/>
   <food-strawberry/>
   <personal-profile/>
+  <rest-api/>
 </template>
 <style>
   
